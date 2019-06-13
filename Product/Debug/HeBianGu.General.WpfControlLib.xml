@@ -1,0 +1,2732 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HeBianGu.General.WpfControlLib</name>
+    </assembly>
+    <members>
+        <member name="T:HeBianGu.General.WpfControlLib.BufferPlayControl">
+            <summary>
+            BufferPlayControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            BufferPlayControl
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BufferPlayControl.MinValue">
+            <summary> 绑定最小值 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BufferPlayControl.MaxValue">
+            <summary> 绑定最大值 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BufferPlayControl.SmallChange">
+            <summary> 绑定最小偏移量 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BufferPlayControl.Value">
+            <summary> 设置当前播放值 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BufferPlayControl.BufferValue">
+            <summary> 设置当前缓冲值 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BufferPlayControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.BufferPlayEngine">
+            <summary> 缓冲播放引擎 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BufferPlayEngine.Capacity">
+            <summary> 可播放容器量 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BufferPlayEngine.CapacityTotal">
+            <summary> 总缓冲容器量 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BufferPlayEngine.TaskCount">
+            <summary> 同时下载的任务数量 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BufferPlayEngine.RefreshCapacity(System.Int32)">
+            <summary> 刷新缓冲数量 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BufferPlayEngine.Start">
+            <summary> 开始播放 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BufferPlayEngine.Stop">
+            <summary> 停止引擎 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BufferPlayEngine.GetWaitCurrent(System.Predicate{HeBianGu.General.WpfControlLib.IBufferPlayEntity},System.Action{System.Boolean,System.Int32,System.Int32})">
+            <summary> 获取下好的文件 返回null则需要等待 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BufferPlayEngine.GetWaitCurrent(System.Int32,System.Action{System.Boolean,System.Int32,System.Int32})">
+            <summary> 获取下好的文件 返回null则需要等待 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BufferPlayEngine.GetBufferSize(System.Predicate{HeBianGu.General.WpfControlLib.IBufferPlayEntity})">
+            <summary> 获取当前缓存完的位置 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BufferPlayEngine.GetBufferSize(System.Int32)">
+            <summary> 获取当前缓存完的位置 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BufferPlayEngine.Clear">
+            <summary> 清理缓存数据 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BufferPlayEngine.RefreshPlayMode(System.Boolean)">
+            <summary> 反向播放 </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.IBufferPlayEntity">
+            <summary> 缓冲任务接口 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.IBufferPlayEntity.IsLoaded">
+            <summary> 是否执行完成 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.IBufferPlayEntity.Start">
+            <summary> 开始任务 </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.BufferPlayEntityBase">
+            <summary> 缓冲任务抽象基类 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BufferPlayEntityBase.IsLoaded">
+            <summary> 执行状态 1=正在执行 2=执行完成  0=未执行 -1=执行错误 </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.BindPassWordBox">
+            <summary> 可以绑定的密码框 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.Commond.ControlCommand.OpenFileCommand">
+            <summary> 运行文件 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.TreeListViewItem.Level">
+            <summary>
+            Item's hierarchy in the tree
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.LevelToIndentConverter">
+            <summary>
+            Convert Level to left margin
+            Pass a prarameter if you want a unit length other than 19.0.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.InlineModalDialog">
+            <summary>
+            Provides a modal dialog that uses inline <see cref="T:System.Windows.UIElement"/>s
+            instead of a top-level window.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDialog.#cctor">
+            <summary>
+            Initializes the <see cref="T:HeBianGu.General.WpfControlLib.InlineModalDialog"/> class.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HeBianGu.General.WpfControlLib.InlineModalDialog"/> class.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDialog.DialogIntroAnimationProperty">
+            <summary>
+            Identifies the <see cref="P:HeBianGu.General.WpfControlLib.InlineModalDialog.DialogIntroAnimation"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDialog.DialogIntroAnimation">
+            <summary>
+            Gets or sets the animation that runs when this dialog is shown.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDialog.DialogOutroAnimationProperty">
+            <summary>
+            Identifies the <see cref="P:HeBianGu.General.WpfControlLib.InlineModalDialog.DialogOutroAnimation"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDialog.DialogOutroAnimation">
+            <summary>
+            Gets or sets the animation that runs when this dialog is closed.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDialog.ShowBlurrer">
+            <summary>
+            Gets or sets a value indicating whether to show the blurrer.
+            </summary>
+            <value><c>true</c> if the blurrer is shown; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDialog.ShowBlurrerProperty">
+            <summary>
+            Identifies the <see cref="P:HeBianGu.General.WpfControlLib.InlineModalDialog.ShowBlurrer"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDialog.Owner">
+            <summary>
+            Gets or sets the owner.
+            <remarks>
+            This value is used to retrieve the corresponding <see cref="T:HeBianGu.General.WpfControlLib.InlineModalDecorator"/>.
+            </remarks>
+            </summary>
+            <value>The owner.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDialog.OwnerProperty">
+            <summary>
+            Identifies the <see cref="P:HeBianGu.General.WpfControlLib.InlineModalDialog.Owner"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDialog.DialogResult">
+            <summary>
+            Gets or sets the dialog result.
+            </summary>
+            <value>The dialog result.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDialog.CloseCommand">
+            <summary>
+            Identifies the <c>Close</c> routed command, which can be used to close the dialog.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDialog.OpenedEvent">
+            <summary>
+            Identifies the <see cref="E:Opened"/> routed event.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.InlineModalDialog.Opened">
+            <summary>
+            Fires when the dialog is opened.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDialog.OnOpened">
+            <summary>
+            Raises the <see cref="E:HeBianGu.General.WpfControlLib.InlineModalDialog.Opened"/> routed event.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDialog.ClosedEvent">
+            <summary>
+            Identifies the <see cref="E:Closed"/> routed event.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.InlineModalDialog.Closed">
+            <summary>
+            Fires when the dialog closes.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDialog.OnClosed">
+            <summary>
+            Raises the <see cref="E:HeBianGu.General.WpfControlLib.InlineModalDialog.Closed"/> routed event.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDialog.ClosingEvent">
+            <summary>
+            Identifies the <see cref="E:Closing"/> routed event.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.InlineModalDialog.Closing">
+            <summary>
+            Fires when the dialog is about to close.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDialog.OnClosing(HeBianGu.General.WpfControlLib.CancelRoutedEventArgs)">
+            <summary>
+            Raises the <see cref="E:HeBianGu.General.WpfControlLib.InlineModalDialog.Closing"/> routed event.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDialog.Show">
+            <summary>
+            Shows the modal dialog.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDialog.Close">
+            <summary>
+            Closes the modal dialog.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDialog.CloseCurrent(System.Windows.DependencyObject)">
+            <summary>
+            Attempts to close the front-most dialog of the provided owner.
+            </summary>
+            <param name="owner"></param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDialog.HandleCloseCommand(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            Handler for the close command.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDialog.OnCloseAnimationCompleted(System.Object,System.EventArgs)">
+            <summary>
+            Handler for the window close animation completion, this delays
+            actually closing the window until all outro animations have completed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.CancelRoutedEventHandler">
+            <summary>
+            Represents a delegate used for routed events that support cancellation.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.CancelRoutedEventArgs">
+            <summary>
+            Represents routed events arguments that support cancellation.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.CancelRoutedEventArgs.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:HeBianGu.General.WpfControlLib.CancelRoutedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.CancelRoutedEventArgs.#ctor(System.Windows.RoutedEvent)">
+            <summary>
+            Initializes a new instance of <see cref="T:HeBianGu.General.WpfControlLib.CancelRoutedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.CancelRoutedEventArgs.#ctor(System.Windows.RoutedEvent,System.Object)">
+            <summary>
+            Initializes a new instance of <see cref="T:HeBianGu.General.WpfControlLib.CancelRoutedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.CancelRoutedEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether to cancel the event.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.InlineModalDecorator">
+            <summary>
+            Provides a host for <see cref="T:HeBianGu.General.WpfControlLib.InlineModalDialog"/>s.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDecorator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HeBianGu.General.WpfControlLib.InlineModalDecorator"/> class.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDecorator.TargetProperty">
+            <summary>
+            Identifies the <see cref="P:HeBianGu.General.WpfControlLib.InlineModalDecorator.Target"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDecorator.Target">
+            <summary>
+            Gets or sets the dialog decorator target.
+            This element will be marked as the root element under which inline dialogs can be used.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDecorator.ModalCount">
+            <summary>
+            Gets the current modal count.
+            </summary>
+            <value>The modal count.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDecorator.ModalCountProperty">
+            <summary>
+            Identifies the <see cref="P:HeBianGu.General.WpfControlLib.InlineModalDecorator.ModalCount"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDecorator.BlurrerStyle">
+            <summary>
+            Gets or sets the blurrer style.
+            <remarks>
+            The blurrer is a <see cref="T:System.Windows.Controls.Border"/>.
+            </remarks>
+            </summary>
+            <value>The blurrer style.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.InlineModalDecorator.BlurrerStyleProperty">
+            <summary>
+            Identifies the <see cref="P:HeBianGu.General.WpfControlLib.InlineModalDecorator.BlurrerStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDecorator.Child">
+            <summary>
+            Gets or sets the child element.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDecorator.LogicalChildren">
+            <summary>
+            Gets the logical children.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.InlineModalDecorator.VisualChildrenCount">
+            <summary>
+            Gets the visual children count.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDecorator.GetVisualChild(System.Int32)">
+            <summary>
+            Gets the visual child at the specified index.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDecorator.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Measures the element.
+            </summary>
+            <param name="constraint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.InlineModalDecorator.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            Arranges the element.
+            </summary>
+            <param name="arrangeSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.AnimatedTextBlock">
+            <summary>
+                Provides a control for displaying small amounts of flow content and animating its appearance.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.AnimatedTextBlock.#cctor">
+            <summary>
+                Initializes the <see cref="T:HeBianGu.General.WpfControlLib.AnimatedTextBlock" /> class.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.SegmentLength">
+            <summary>
+                Gets or sets the length of the segment.
+            </summary>
+            <value>The length of the segment.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextBlock.SegmentLengthProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.SegmentLength" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.Mode">
+            <summary>
+                Gets or sets the mode.
+            </summary>
+            <value>The mode.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextBlock.ModeProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.Mode" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.Order">
+            <summary>
+                Gets or sets the order.
+            </summary>
+            <value>The order.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextBlock.OrderProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.Order" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.Duration">
+            <summary>
+                Gets or sets the segment animation duration.
+            </summary>
+            <value>The segment animation duration.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextBlock.DurationProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.Duration" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.Delay">
+            <summary>
+                Gets or sets the delay between segment animations.
+            </summary>
+            <value>The delay between segment animations.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextBlock.DelayProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.Delay" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.RepeatBehavior">
+            <summary>
+                Gets or sets the repeat behavior.
+            </summary>
+            <value>The repeat behavior.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextBlock.RepeatBehaviorProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.AnimatedTextBlock.RepeatBehavior" /> dependency property.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.AnimatedTextBlock.OnInitialized(System.EventArgs)">
+            <summary>
+                Raises the <see cref="E:System.Windows.FrameworkElement.Initialized" /> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs" /> that contains the event data.</param>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.AnimatedTextMode">
+            <summary>
+                Specifies the type of the animation in the <see cref="T:HeBianGu.General.WpfControlLib.AnimatedTextBlock" /> control.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextMode.None">
+            <summary>
+                No animation.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextMode.Reveal">
+            <summary>
+                Reveal the text.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextMode.Hide">
+            <summary>
+                Hide the text.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextMode.RevealAndHide">
+            <summary>
+                Reveal the text and then hide it.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextMode.Spotlight">
+            <summary>
+                Highlight a segment of the text and move on.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.AnimatedTextOrder">
+            <summary>
+                Specifies the order of the animation in the <see cref="T:HeBianGu.General.WpfControlLib.AnimatedTextBlock" /> control.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextOrder.Forward">
+            <summary>
+                Forward
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextOrder.Backward">
+            <summary>
+                Backward
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.AnimatedTextOrder.Random">
+            <summary>
+                Random
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ModernFrame">
+            <summary> 自定义导航框架 </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.ModernFrame.KeepAliveProperty">
+            <summary>
+            Identifies the KeepAlive attached dependency property.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.ModernFrame.KeepContentAliveProperty">
+            <summary>
+            Identifies the KeepContentAlive dependency property.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.ModernFrame.ContentLoaderProperty">
+            <summary>
+            Identifies the ContentLoader dependency property.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.ModernFrame.IsLoadingContentProperty">
+            <summary>
+            Identifies the IsLoadingContent dependency property.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.ModernFrame.SourceProperty">
+            <summary>
+            Identifies the Source dependency property.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.ModernFrame.FragmentNavigation">
+            <summary>
+            Occurs when navigation to a content fragment begins.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.ModernFrame.Navigating">
+            <summary>
+            Occurs when a new navigation is requested.
+            </summary>
+            <remarks>
+            The navigating event is also raised when a parent frame is navigating. This allows for cancelling parent navigation.
+            </remarks>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.ModernFrame.Navigated">
+            <summary>
+            Occurs when navigation to new content has completed.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.ModernFrame.NavigationFailed">
+            <summary>
+            Occurs when navigation has failed.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ModernFrame.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HeBianGu.General.WpfControlLib.ModernFrame"/> class.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ModernFrame.HandleRoutedEvent(System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            Determines whether the routed event args should be handled.
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+            <remarks>This method prevents parent frames from handling routed commands.</remarks>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ModernFrame.ShouldKeepContentAlive(System.Object)">
+            <summary>
+            Determines whether the specified content should be kept alive.
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ModernFrame.GetKeepAlive(System.Windows.DependencyObject)">
+            <summary>
+            Gets a value indicating whether to keep specified object alive in a ModernFrame instance.
+            </summary>
+            <param name="o">The target dependency object.</param>
+            <returns>Whether to keep the object alive. Null to leave the decision to the ModernFrame.</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ModernFrame.SetKeepAlive(System.Windows.DependencyObject,System.Nullable{System.Boolean})">
+            <summary>
+            Sets a value indicating whether to keep specified object alive in a ModernFrame instance.
+            </summary>
+            <param name="o">The target dependency object.</param>
+            <param name="value">Whether to keep the object alive. Null to leave the decision to the ModernFrame.</param>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ModernFrame.KeepContentAlive">
+            <summary>
+            Gets or sets a value whether content should be kept in memory.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ModernFrame.ContentLoader">
+            <summary>
+            Gets or sets the content loader.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ModernFrame.IsLoadingContent">
+            <summary>
+            Gets a value indicating whether this instance is currently loading content.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ModernFrame.Source">
+            <summary>
+            Gets or sets the source of the current content.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.NavigationType">
+            <summary>
+            Identifies the types of navigation that are supported.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NavigationType.New">
+            <summary>
+            Navigating to new content.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NavigationType.Back">
+            <summary>
+            Navigating back in the back navigation history.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NavigationType.Refresh">
+            <summary>
+            Reloading the current content.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.IContentLoader">
+            <summary>
+            The contract for loading content.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.IContentLoader.LoadContentAsync(System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously loads content from specified uri.
+            </summary>
+            <param name="uri">The content uri.</param>
+            <param name="cancellationToken">The token used to cancel the load content task.</param>
+            <returns>The loaded content.</returns>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.NavigationHelper">
+            <summary>
+            Provides helper function for navigation.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NavigationHelper.FrameSelf">
+            <summary>
+            Identifies the current frame.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NavigationHelper.FrameTop">
+            <summary>
+            Identifies the top frame.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NavigationHelper.FrameParent">
+            <summary>
+            Identifies the parent of the current frame.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NavigationHelper.FindFrame(System.String,System.Windows.FrameworkElement)">
+            <summary>
+            Finds the frame identified with given name in the specified context.
+            </summary>
+            <param name="name">The frame name.</param>
+            <param name="context">The framework element providing the context for finding a frame.</param>
+            <returns>The frame or null if the frame could not be found.</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NavigationHelper.RemoveFragment(System.Uri)">
+            <summary>
+            Removes the fragment from specified uri and return it.
+            </summary>
+            <param name="uri">The uri</param>
+            <returns>The uri without the fragment, or the uri itself if no fragment is found</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NavigationHelper.RemoveFragment(System.Uri,System.String@)">
+            <summary>
+            Removes the fragment from specified uri and returns the uri without the fragment and the fragment itself.
+            </summary>
+            <param name="uri">The uri.</param>
+            <param name="fragment">The fragment, null if no fragment found</param>
+            <returns>The uri without the fragment, or the uri itself if no fragment is found</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NavigationHelper.ToUri(System.Object)">
+            <summary>
+            Tries to cast specified value to a uri. Either a uri or string input is accepted.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NavigationHelper.TryParseUriWithParameters(System.Object,System.Uri@,System.String@,System.String@)">
+            <summary>
+            Tries to parse a uri with parameters from given value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="uri">The URI.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="targetName">Name of the target.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NavigationHelper.TryParseUriWithParameters(System.String,System.Uri@,System.String@,System.String@)">
+            <summary>
+            Tries to parse a uri with parameters from given string value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="uri">The URI.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="targetName">Name of the target.</param>
+            <returns></returns>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.IContent">
+            <summary>
+            Defines the optional contract for content loaded in a ModernFrame.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.IContent.OnFragmentNavigation(HeBianGu.General.WpfControlLib.FragmentNavigationEventArgs)">
+            <summary>
+            Called when navigation to a content fragment begins.
+            </summary>
+            <param name="e">An object that contains the navigation data.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.IContent.OnNavigatedFrom(HeBianGu.General.WpfControlLib.NavigationEventArgs)">
+            <summary>
+            Called when this instance is no longer the active content in a frame.
+            </summary>
+            <param name="e">An object that contains the navigation data.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.IContent.OnNavigatedTo(HeBianGu.General.WpfControlLib.NavigationEventArgs)">
+            <summary>
+            Called when a this instance becomes the active content in a frame.
+            </summary>
+            <param name="e">An object that contains the navigation data.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.IContent.OnNavigatingFrom(HeBianGu.General.WpfControlLib.NavigatingCancelEventArgs)">
+            <summary>
+            Called just before this instance is no longer the active content in a frame.
+            </summary>
+            <param name="e">An object that contains the navigation data.</param>
+            <remarks>The method is also invoked when parent frames are about to navigate.</remarks>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.DefaultContentLoader">
+            <summary>
+            Loads XAML files using Application.LoadComponent.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.DefaultContentLoader.LoadContentAsync(System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously loads content from specified uri.
+            </summary>
+            <param name="uri">The content uri.</param>
+            <param name="cancellationToken">The token used to cancel the load content task.</param>
+            <returns>The loaded content.</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.DefaultContentLoader.LoadContent(System.Uri)">
+            <summary>
+            Loads the content from specified uri.
+            </summary>
+            <param name="uri">The content uri</param>
+            <returns>The loaded content.</returns>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ModernUIHelper">
+            <summary>
+            Provides various common helper methods.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ModernUIHelper.IsInDesignMode">
+            <summary>
+            Determines whether the current code is executed in a design time environment such as Visual Studio or Blend.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.FragmentNavigationEventArgs">
+            <summary>
+            Provides data for fragment navigation events.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FragmentNavigationEventArgs.Fragment">
+            <summary>
+            Gets the uniform resource identifier (URI) fragment.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.NavigatingCancelEventArgs">
+            <summary>
+            Provides data for the <see cref="M:HeBianGu.General.WpfControlLib.IContent.OnNavigatingFrom(HeBianGu.General.WpfControlLib.NavigatingCancelEventArgs)" /> method and the <see cref="E:HeBianGu.General.WpfControlLib.ModernFrame.Navigating"/> event.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NavigatingCancelEventArgs.IsParentFrameNavigating">
+            <summary>
+            Gets a value indicating whether the frame performing the navigation is a parent frame or the frame itself.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NavigatingCancelEventArgs.NavigationType">
+            <summary>
+            Gets a value that indicates the type of navigation that is occurring.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NavigatingCancelEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether the event should be canceled.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.NavigationFailedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:HeBianGu.General.WpfControlLib.ModernFrame.NavigationFailed"/> event.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NavigationFailedEventArgs.Error">
+            <summary>
+            Gets the error from the failed navigation.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NavigationFailedEventArgs.Handled">
+            <summary>
+            Gets or sets a value that indicates whether the failure event has been handled.
+            </summary>
+            <remarks>
+            When not handled, the error is displayed in the ModernFrame raising the NavigationFailed event.
+            </remarks>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.NavigationEventArgs">
+            <summary>
+            Provides data for frame navigation events.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NavigationEventArgs.NavigationType">
+            <summary>
+            Gets a value that indicates the type of navigation that is occurring.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NavigationEventArgs.Content">
+            <summary>
+            Gets the content of the target being navigated to.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.NavigationBaseEventArgs">
+            <summary>
+            Defines the base navigation event arguments.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NavigationBaseEventArgs.Frame">
+            <summary>
+            Gets the frame that raised this event.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NavigationBaseEventArgs.Source">
+            <summary>
+            Gets the source uri for the target being navigated to.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ModernProgressRing">
+            <summary>
+            Represents a control that indicates that an operation is ongoing. 
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.ModernProgressRing.IsActiveProperty">
+            <summary>
+            Identifies the IsActive property.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ModernProgressRing.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HeBianGu.General.WpfControlLib.ModernProgressRing"/> class.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ModernProgressRing.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate" />.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ModernProgressRing.IsActive">
+            <summary>
+            Gets or sets a value that indicates whether the <see cref="T:HeBianGu.General.WpfControlLib.ModernProgressRing"/> is showing progress.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.NotifyIcon">
+            <summary>
+                Specifies a component that creates an icon in the notification area.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipClickEvent">
+            <summary>
+                Identifies the <see cref="E:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipClick" /> routed event.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipClick">
+            <summary>
+                Occurs when the balloon tip is clicked.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipClosedEvent">
+            <summary>
+                Identifies the <see cref="E:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipClosed" /> routed event.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipClosed">
+            <summary>
+                Occurs when the balloon tip is closed by the user.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipShownEvent">
+            <summary>
+                Identifies the <see cref="E:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipShown" /> routed event.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipShown">
+            <summary>
+                Occurs when the balloon tip is displayed on the screen.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.ClickEvent">
+            <summary>
+                Identifies the <see cref="E:HeBianGu.General.WpfControlLib.NotifyIcon.Click" /> routed event.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.NotifyIcon.Click">
+            <summary>
+                Occurs when the user clicks the icon in the notification area.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.DoubleClickEvent">
+            <summary>
+                Identifies the <see cref="E:HeBianGu.General.WpfControlLib.NotifyIcon.DoubleClick" /> routed event.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.NotifyIcon.DoubleClick">
+            <summary>
+                Occurs when the user double-clicks the icon in the notification area of the taskbar.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.MouseClickEvent">
+            <summary>
+                Identifies the <see cref="E:HeBianGu.General.WpfControlLib.NotifyIcon.MouseClick" /> routed event.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.NotifyIcon.MouseClick">
+            <summary>
+                Occurs when the user clicks a <see cref="T:HeBianGu.General.WpfControlLib.NotifyIcon" /> with the mouse.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.MouseDoubleClickEvent">
+            <summary>
+                Identifies the <see cref="E:HeBianGu.General.WpfControlLib.NotifyIcon.MouseDoubleClick" /> routed event.
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.NotifyIcon.MouseDoubleClick">
+            <summary>
+                Occurs when the user double-clicks the <see cref="T:HeBianGu.General.WpfControlLib.NotifyIcon" /> with the mouse.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NotifyIcon.#cctor">
+            <summary>
+                Initializes the <see cref="T:HeBianGu.General.WpfControlLib.NotifyIcon" /> class.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NotifyIcon.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:HeBianGu.General.WpfControlLib.NotifyIcon" /> class.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NotifyIcon.Finalize">
+            <summary>
+                Releases unmanaged resources and performs other cleanup operations before the
+                <see cref="T:HeBianGu.General.WpfControlLib.NotifyIcon" /> is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NotifyIcon.Dispose">
+            <summary>
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NotifyIcon.ShowBalloonTip(System.Int32)">
+            <summary>
+                Displays a balloon tip in the taskbar for the specified time period.
+            </summary>
+            <param name="timeout">The time period, in milliseconds, the balloon tip should display.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NotifyIcon.ShowBalloonTip(System.Int32,System.String,System.String,HeBianGu.General.WpfControlLib.NotifyBalloonIcon)">
+            <summary>
+                Displays a balloon tip with the specified title, text, and icon in the taskbar for the specified time period.
+            </summary>
+            <param name="timeout">The time period, in milliseconds, the balloon tip should display.</param>
+            <param name="tipTitle">The title to display on the balloon tip.</param>
+            <param name="tipText">The text to display on the balloon tip.</param>
+            <param name="tipIcon">One of the <see cref="T:HeBianGu.General.WpfControlLib.NotifyBalloonIcon" /> values.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.NotifyIcon.UpdateIconForVisibility">
+            <summary>
+                Shows or hides the icon according to the <see cref="P:IsVisible" /> and <see cref="P:Visibility" /> properties.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.IconVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:HeBianGu.General.WpfControlLib.NotifyIcon.IconVisibility"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NotifyIcon.IconVisibility">
+            <summary>
+            Gets or sets the notify icon's visibility.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipIcon">
+            <summary>
+                Gets or sets the icon to display on the balloon tip.
+            </summary>
+            <value>The balloon tip icon.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipIconProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipIcon" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipText">
+            <summary>
+                Gets or sets the text to display on the balloon tip.
+            </summary>
+            <value>The balloon tip text.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipTextProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipText" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipTitle">
+            <summary>
+                Gets or sets the title of the balloon tip.
+            </summary>
+            <value>The balloon tip title.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipTitleProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.NotifyIcon.BalloonTipTitle" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NotifyIcon.Text">
+            <summary>
+                Gets or sets the tooltip text displayed when the mouse pointer rests on a notification area icon.
+            </summary>
+            <value>The text.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.TextProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.NotifyIcon.Text" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.NotifyIcon.Icon">
+            <summary>
+                Gets or sets the icon.
+            </summary>
+            <value>The icon.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIcon.IconProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.NotifyIcon.Icon" /> dependency property.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.NotifyIconVisibility">
+            <summary>
+            Defines the icon visibility modes of <see cref="T:HeBianGu.General.WpfControlLib.NotifyIcon"/>.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIconVisibility.Hidden">
+            <summary>
+            The icon is not shown.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIconVisibility.Visible">
+            <summary>
+            The icon is shown.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyIconVisibility.UseControlVisibility">
+            <summary>
+            The icon is shown according to <see cref="P:System.Windows.UIElement.IsVisible"/>.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.NotifyBalloonIcon">
+            <summary>
+                Defines a set of standardized icons that can be associated with a balloon tip.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyBalloonIcon.None">
+            <summary>
+                No icon.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyBalloonIcon.Info">
+            <summary>
+                An information icon.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyBalloonIcon.Warning">
+            <summary>
+                A warning icon.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NotifyBalloonIcon.Error">
+            <summary>
+                An error icon.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.BROWSEINFO.HwndOwner">
+            <summary>
+                Handle to the owner window for the dialog box.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.BROWSEINFO.Root">
+            <summary>
+                Pointer to an item identifier list (PIDL) specifying the
+                location of the root folder from which to start browsing.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.BROWSEINFO.DisplayName">
+            <summary>
+                Address of a buffer to receive the display name of the
+                folder selected by the user.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.BROWSEINFO.Title">
+            <summary>
+                Address of a null-terminated string that is displayed
+                above the tree view control in the dialog box.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.BROWSEINFO.Flags">
+            <summary>
+                Flags specifying the options for the dialog box.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.BROWSEINFO.Callback">
+            <summary>
+                Address of an application-defined function that the
+                dialog box calls when an event occurs.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.BROWSEINFO.LParam">
+            <summary>
+                Application-defined value that the dialog box passes to
+                the callback function
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.BROWSEINFO.Image">
+            <summary>
+                Variable to receive the image associated with the selected folder.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.None">
+            <summary>
+                None.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.FolderOnly">
+            <summary>
+                For finding a folder to start document searching
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.FindComputer">
+            <summary>
+                For starting the Find Computer
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.ShowStatusText">
+            <summary>
+                Top of the dialog has 2 lines of text for BROWSEINFO.lpszTitle and
+                one line if this flag is set.  Passing the message
+                BFFM_SETSTATUSTEXTA to the hwnd can set the rest of the text.
+                This is not used with BIF_USENEWUI and BROWSEINFO.lpszTitle gets
+                all three lines of text.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.ShowEditBox">
+            <summary>
+                Add an editbox to the dialog
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.ValidateResult">
+            <summary>
+                insist on valid result (or CANCEL)
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.UseNewStyle">
+            <summary>
+                Use the new dialog layout with the ability to resize
+                Caller needs to call OleInitialize() before using this API
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.AllowUrls">
+            <summary>
+                Allow URLs to be displayed or entered. (Requires BIF_USENEWUI)
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.ShowUsageHint">
+            <summary>
+                Add a UA hint to the dialog, in place of the edit box. May not be
+                combined with BIF_EDITBOX.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.HideNewFolderButton">
+            <summary>
+                Do not add the "New Folder" button to the dialog.  Only applicable
+                with BIF_NEWDIALOGSTYLE.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.GetShortcuts">
+            <summary>
+                don't traverse target as shortcut
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.BrowseComputers">
+            <summary>
+                Browsing for Computers.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.BrowsePrinters">
+            <summary>
+                Browsing for Printers.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.BrowseFiles">
+            <summary>
+                Browsing for Everything
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.FolderBrowserOptions.BrowseShares">
+            <summary>
+                sharable resources displayed (remote shares, requires BIF_USENEWUI)
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.NotifyIconFlags.Icon">
+            <summary>
+                The hIcon member is valid.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.NotifyIconFlags.Message">
+            <summary>
+                The uCallbackMessage member is valid.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.NotifyIconFlags.ToolTip">
+            <summary>
+                The szTip member is valid.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.NotifyIconFlags.State">
+            <summary>
+                The dwState and dwStateMask members are valid.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.NativeMethods.NotifyIconFlags.Balloon">
+            <summary>
+                Use a balloon ToolTip instead of a standard ToolTip. The szInfo, uTimeout, szInfoTitle, and dwInfoFlags members are
+                valid.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ArgumentValidator">
+            <summary>
+                Encapsulates methods for method arguments validation.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ArgumentValidator.NotNullOrEmptyString(System.String,System.String)">
+            <summary>
+                Checks a string argument to ensure it isn't null or empty
+            </summary>
+            <param name="argumentValue">The argument value to check.</param>
+            <param name="argumentName">The name of the argument.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ArgumentValidator.NotNull(System.Object,System.String)">
+            <summary>
+                Checks an argument to ensure it isn't null
+            </summary>
+            <param name="argumentValue">The argument value to check.</param>
+            <param name="argumentName">The name of the argument.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ArgumentValidator.EnumValueIsDefined(System.Type,System.Object,System.String)">
+            <summary>
+                Checks an Enum argument to ensure that its value is defined by the specified Enum type.
+            </summary>
+            <param name="enumType">The Enum type the value should correspond to.</param>
+            <param name="value">The value to check for.</param>
+            <param name="argumentName">The name of the argument holding the value.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ArgumentValidator.TypeIsAssignableFromType(System.Type,System.Type,System.String)">
+            <summary>
+                Verifies that an argument type is assignable from the provided type (meaning
+                interfaces are implemented, or classes exist in the base class hierarchy).
+            </summary>
+            <param name="assignee">The argument type.</param>
+            <param name="providedType">The type it must be assignable from.</param>
+            <param name="argumentName">The argument name.</param>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.DTextBox.IconWidth">
+            <summary>
+            图标宽度
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.DTextBox.IconHeight">
+            <summary>
+            图标高度
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.MetroColorPicker">
+            <summary> 颜色选择控件 </summary>
+            <summary>
+            MetroColorPicker
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.MetroColorPicker.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.HsbaColor.H">
+            <summary> 0 - 359，360 = 0  </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.HsbaColor.S">
+            <summary> 0 - 1 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.HsbaColor.B">
+            <summary> 0 - 1 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.HsbaColor.A">
+            <summary> 0 - 1 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.HsbaColor.Y">
+            <summary> 亮度 0 - 100 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.RgbaColor.R">
+            <summary> 0 - 255 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.RgbaColor.G">
+            <summary> 0 - 255 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.RgbaColor.B">
+            <summary> 0 - 255 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.RgbaColor.A">
+            <summary> 0 - 255 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.RgbaColor.Y">
+            <summary> 亮度 0 - 100 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.Utility.RgbaToHsba(HeBianGu.General.WpfControlLib.RgbaColor)">
+            <summary> Rgba转Hsba/ </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.Utility.HsbaToRgba(HeBianGu.General.WpfControlLib.HsbaColor)">
+            <summary> Hsba转Rgba </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.Utility.GetBrightness(System.Int32,System.Int32,System.Int32)">
+            <summary>/ 获取颜色亮度 </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.MetroTabControl">
+            <summary>
+            AnimatedTabControl.xaml 的交互逻辑
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.AnimatedTabControl">
+            <summary>
+            AnimatedTabControl.xaml 的交互逻辑
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.Controls.BindRichTextBox">
+            <summary>
+            BindRichTextBox.xaml 的交互逻辑
+            </summary>
+            <summary>
+            BindRichTextBox
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.Controls.BindRichTextBox.BindText">
+            <summary> 绑定的字符串 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.Controls.BindRichTextBox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.BulletCheckBox">
+            <summary>
+            BulletCheckBox.xaml 的交互逻辑
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BulletCheckBox.Text">
+            <summary>
+            默认文本（未选中）
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BulletCheckBox.CheckedText">
+            <summary>
+            选中状态文本
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BulletCheckBox.CheckedForeground">
+            <summary>
+            选中状态前景样式
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BulletCheckBox.CheckedBackground">
+            <summary>
+            选中状态背景色
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.FButton">
+            <summary> FButton依赖属性 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.PressedBackground">
+            <summary> 鼠标按下背景样式 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.PressedForeground">
+            <summary> 鼠标按下前景样式（图标、文字） </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.MouseOverBackground">
+            <summary> 鼠标进入背景样式 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.MouseOverForeground">
+            <summary> 鼠标进入前景样式 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.FIcon">
+            <summary> 按钮字体图标编码 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.FIconSize">
+            <summary> 按钮字体图标大小 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.FIconMargin">
+            <summary> 字体图标间距 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.AllowsAnimation">
+            <summary> 是否启用Ficon动画 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.CornerRadius">
+            <summary> 按钮圆角大小,左上，右上，右下，左下 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.Orientation">
+            <summary> 图标和文字的布局方式 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.IsChecked">
+            <summary> 按钮是否被选中 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.FButton.IconFontWeight">
+            <summary> 按钮字体图标编码 </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.FCheckBox">
+            <summary>
+            FCheckBox.xaml 的交互逻辑
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.FTextBox">
+            <summary>
+            FTextBox.xaml 的交互逻辑
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.HighlightTextBlock">
+            <summary> 高亮查找文本 </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.MessageUserControl">
+            <summary>
+            MessageUserControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MessageUserControl
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.MessageUserControl.Message">
+            <summary> 消息 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.MessageUserControl.Title">
+            <summary> 标题 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.MessageUserControl.Actions">
+            <summary> 任务按钮 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.MessageUserControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.MultiComboBox">
+            <summary>
+            MultiComboBox.xaml 的交互逻辑
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.MultiComboBox.SelectedItems">
+            <summary>
+            获取选择项集合
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.MultiComboBox.SelectedIndex">
+            <summary>
+            设置或获取选择项
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.PagingDataGrid">
+            <summary> 分页DataGrid </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.IsShowPagingProperty">
+            <summary>
+            是否显示分页
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.AllowPagingProperty">
+            <summary>
+            是否允许分页
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.PageSizeListProperty">
+            <summary>
+            显示每页记录数字符串列表
+            例:10,20,30
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.PageSizeItemsSourceProperty">
+            <summary>
+            显示每页记录数集合
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.TotalProperty">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.PageSizeProperty">
+            <summary>
+            每页记录数，默认：10
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.PageIndexProperty">
+            <summary>
+            当前页码，默认：1
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.PageCountProperty">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.StartProperty">
+            <summary>
+            起始记录数
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.EndProperty">
+            <summary>
+            终止记录数
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PagingDataGrid.SortFieldProperty">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.PagingDataGrid.PagingChanged">
+            <summary>
+            分页事件
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.PagingDataGrid.OnApplyTemplate">
+            <summary>
+            应用样式
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ProgressBarControl">
+            <summary>
+            进度条
+            </summary>
+            <summary>
+            ProgressBarControl
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ProgressBarControl.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ProgressBarControl.ProgressBarControl_OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            加载后刷新
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ProgressBarControl.EllipseCount">
+            <summary>
+            获取或设置圆圈数量
+            默认12
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ProgressBarControl.EllipseSize">
+            <summary>
+            获取或设置圆圈大小
+            默认10
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ProgressBarControl.CanvasSize">
+            <summary>
+            获取或设置面板大小
+            默认80
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ProgressBarControl.StepAngle">
+            <summary>
+            获取或设置每次旋转角度
+            默认10.0
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.ProgressBarControl.TimeSpan">
+            <summary>
+            获取或设置每次旋转间隔时间（毫秒）
+            默认100毫秒
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ProgressBarControl.HandleLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Canvas加载
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ProgressBarControl.SetEclipsePosition(HeBianGu.General.WpfControlLib.ProgressBarDataModel)">
+            <summary>
+            设置圆的位置和旋转角度
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ProgressBarControl.SetEclipseOpacity(System.Int32)">
+            <summary>  设置透明度  </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ProgressBarControl.HandleUnloaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Canvas卸载时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ProgressBarControl.HandleAnimationTick(System.Object,System.EventArgs)">
+            <summary>
+            超过计时器间隔时发生。
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ProgressBarControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ProgressBarDataModel">
+            <summary>
+            进度条Model类
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.SpaceSpliterUserControl">
+            <summary>
+            SpaceSpliterUserControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            SpaceSpliterUserControl
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.SpaceSpliterUserControl.RefreshData">
+            <summary> 更新数据 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.SpaceSpliterUserControl.SetPosition">
+            <summary> 刷新位置 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.SpaceSpliterUserControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ThemeSetControl">
+            <summary> 主题设置页面 </summary>
+            <summary>
+            ThemeSetControl
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ThemeSetControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.SettingsAppearanceViewModel">
+            <summary> 主题设置模型 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.SettingsAppearanceViewModel.IsFollowSystemSystem">
+            <summary> 说明  </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.WaitingBox">
+            <summary>
+            WaitingBox.xaml 的交互逻辑
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.BaseUserControl">
+            <summary>  
+            BaseUserControl.xaml 的交互逻辑
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.DataPager">
+            <summary>
+            DataPager.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DataPager
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.DataPager.ItemsSourceProperty">
+            <summary>
+            ItemsSource数据源
+            </summary>
+        </member>
+        <member name="E:HeBianGu.General.WpfControlLib.DataPager.PageChanged">
+            <summary>
+            分页更改事件
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.DataPager.PageSizeItems">
+            <summary>
+            显示每页记录数集合
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.DataPager.PageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.DataPager.Start">
+            <summary>
+            开始记录数
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.DataPager.End">
+            <summary>
+            结束记录数
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.DataPager.RaisePageChanged">
+            <summary>
+            引发分页更改事件
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.DataPager.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.PageChangedEventArgs">
+            <summary>
+            分页更改参数
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.OpacityVisibleUserControl">
+            <summary>
+            OpacityVisibleUserControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            OpacityVisibleUserControl
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.OpacityVisibleUserControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.CloseStoryService">
+            <summary> 此类的说明 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.CloseStoryService.DownToUpClose(System.Windows.Window)">
+            <summary> 从下到上移动关闭窗口 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.CloseStoryService.UoToDownClose(System.Windows.Window)">
+            <summary> 从下到上移动关闭窗口 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.CloseStoryService.DownToUpOpsClose(System.Windows.Window)">
+            <summary> 从下到上渐隐藏窗体 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.CloseStoryService.DownToUpOpsOpen(System.Windows.Window)">
+            <summary> 从下到上渐隐藏窗体 </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.CloseStoryService.t">
+            <summary> 单例模式 </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.CloseStoryService.localLock">
+            <summary> 多线程锁 </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.CloseStoryService.Instance">
+            <summary> 创建指定对象的单例实例 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.CloseStoryService.#ctor">
+            <summary> 禁止外部实例 </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ScrollView3DControl">
+            <summary>
+            ScrollView3DControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ScrollView3DControl
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ScrollView3DControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.BlendEffect">
+            <summary>
+                An effect that blend two textures.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BlendEffect.#cctor">
+            <summary>
+                Initializes the <see cref="T:HeBianGu.General.WpfControlLib.BlendEffect" /> class.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.BlendEffect.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:HeBianGu.General.WpfControlLib.BlendEffect" /> class.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BlendEffect.Input1">
+            <summary>
+                Gets or sets the first input.
+            </summary>
+            <value>The first input.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.BlendEffect.Input1Property">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.BlendEffect.Input1" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.BlendEffect.Input2">
+            <summary>
+                Gets or sets the second input.
+            </summary>
+            <value>The second input.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.BlendEffect.Input2Property">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.BlendEffect.Input2" /> dependency property.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.PointLightEffect">
+            <summary>
+                An effect that colorizes a texture and adds two light points.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.PointLightEffect.#cctor">
+            <summary>
+                Initializes the <see cref="T:HeBianGu.General.WpfControlLib.PointLightEffect" /> class.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.PointLightEffect.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:HeBianGu.General.WpfControlLib.PointLightEffect" /> class.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.PointLightEffect.Input">
+            <summary>
+                Gets or sets the input texture.
+            </summary>
+            <value>The input texture.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PointLightEffect.InputProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.PointLightEffect.Input" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.PointLightEffect.FillColor">
+            <summary>
+                Gets or sets the fill color.
+            </summary>
+            <value>The fill color.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PointLightEffect.FillColorProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.PointLightEffect.FillColor" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.PointLightEffect.Light1Position">
+            <summary>
+                Gets or sets the first light's position.
+            </summary>
+            <value>The first light's position.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PointLightEffect.Light1PositionProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.PointLightEffect.Light1Position" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.PointLightEffect.Light1Color">
+            <summary>
+                Gets or sets the color of the first light.
+            </summary>
+            <value>The color of the first light.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PointLightEffect.Light1ColorProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.PointLightEffect.Light1Color" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.PointLightEffect.Light2Position">
+            <summary>
+                Gets or sets the second light's position.
+            </summary>
+            <value>The second light's position.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PointLightEffect.Light2PositionProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.PointLightEffect.Light2Position" /> dependency property.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.PointLightEffect.Light2Color">
+            <summary>
+                Gets or sets the color of the second light.
+            </summary>
+            <value>The color of the second light.</value>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.PointLightEffect.Light2ColorProperty">
+            <summary>
+                Identifies the <see cref="P:HeBianGu.General.WpfControlLib.PointLightEffect.Light2Color" /> dependency property.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ListItemMoveBehavior">
+            <summary>
+            Represents a behavior that allows moving items in an <see cref="T:System.Windows.Controls.ItemsControl" /> by dragging them.
+            <remarks>For this behavior to work, the <see cref="P:ItemsControl.ItemsPanel" /> must not be a <see cref="T:System.Windows.Controls.VirtualizingPanel" />,
+            and the <see cref="P:ItemsControl.ItemsSource" /> must be an <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" />.</remarks>
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.Dispose">
+            <summary>
+            Performs event clean-up.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.GetIsEnabled(System.Windows.Controls.ItemsControl)">
+            <summary>
+            Gets a value indicating whether the beavior is enabled.
+            </summary>
+            <param name="obj">The object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.SetIsEnabled(System.Windows.Controls.ItemsControl,System.Boolean)">
+            <summary>
+            Sets a value indicating whether the beavior is enabled.
+            </summary>
+            <param name="obj">The object.</param>
+            <param name="value">if set to <c>true</c>, enables the behavior.</param>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.IsEnabledProperty">
+            <summary>
+            Identifies the <c>IsEnabled</c> attached dependency property.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.GetIsElementDraggable(System.Windows.UIElement)">
+            <summary>
+            Gets a value indicating whether the element can be used for dragging.
+            </summary>
+            <param name="obj">The object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.SetIsElementDraggable(System.Windows.UIElement,System.Boolean)">
+            <summary>
+            Sets a value indicating whether the element can be used for dragging.
+            </summary>
+            <param name="obj">The object.</param>
+            <param name="value">if set to <c>true</c>, enables the behavior.</param>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.IsElementDraggableProperty">
+            <summary>
+            Identifies the <c>IsElementDraggable</c> attached dependency property.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.AnimationDurationProperty">
+            <summary>
+            Identifies the <c>AnimationDuration</c> attached dependency property.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.GetAnimationDuration(System.Windows.Controls.ItemsControl)">
+            <summary>
+            Gets the duration of the animation.
+            </summary>
+            <param name="itemsControl">The items control.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.SetAnimationDuration(System.Windows.Controls.ItemsControl,System.TimeSpan)">
+            <summary>
+            Sets the duration of the animation.
+            </summary>
+            <param name="itemsControl">The items control.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.ReorderCompletedEvent">
+            <summary>
+            Identifies the <c>ReorderCompleted</c> attached event.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.AddReorderCompletedHandler(System.Windows.FrameworkElement,System.Windows.RoutedPropertyChangedEventHandler{System.Int32})">
+            <summary>
+            Adds the reorder completed handler.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ListItemMoveBehavior.RemoveReorderCompletedHandler(System.Windows.FrameworkElement,System.Windows.RoutedPropertyChangedEventHandler{System.Int32})">
+            <summary>
+            Removes the reorder completed handler.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.PackIcon">
+            <summary>
+            Icon from the Material Design Icons project, <see cref="!:https://materialdesignicons.com/"/>.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.PackIconBase`1">
+            <summary>
+            Base class for creating an icon control for icon packs.
+            </summary>
+            <typeparam name="TKind"></typeparam>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.PackIconBase`1.#ctor(System.Func{System.Collections.Generic.IDictionary{`0,System.String}})">
+            <param name="dataIndexFactory">
+            Inheritors should provide a factory for setting up the path data index (per icon kind).
+            The factory will only be utilised once, across all closed instances (first instantiation wins).
+            </param>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.PackIconBase`1.Kind">
+            <summary>
+            Gets or sets the icon to display.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.PackIconBase`1.Data">
+            <summary>
+            Gets the icon path data for the current <see cref="P:HeBianGu.General.WpfControlLib.PackIconBase`1.Kind"/>.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.PackIconDataFactory">
+            ******************************************
+            This code is auto generated. Do not amend.
+            ******************************************
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.PackIconKind">
+            ******************************************
+            This code is auto generated. Do not amend.
+            ******************************************
+            <summary>
+            List of available icons for use with <see cref="T:HeBianGu.General.WpfControlLib.PackIcon" />.
+            </summary>
+            <remarks>
+            All icons sourced from Material Design Icons Font - <see cref="!:https://materialdesignicons.com/"/> - in accordance of 
+            <see cref="!:https://github.com/Templarian/MaterialDesign/blob/master/license.txt"/>.
+            </remarks>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.Ripple.RecognizesAccessKeyProperty">
+            <summary>
+              The DependencyProperty for the RecognizesAccessKey property. 
+              Default Value: false 
+            </summary> 
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.Ripple.RecognizesAccessKey">
+            <summary> 
+              Determine if Ripple should use AccessText in its style
+            </summary> 
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.RippleAssist.IsCenteredProperty">
+            <summary>
+            Set to <c>true</c> to cause the ripple to originate from the centre of the 
+            content.  Otherwise the effect will originate from the mouse down position.        
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RippleAssist.SetIsCentered(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Set to <c>true</c> to cause the ripple to originate from the centre of the 
+            content.  Otherwise the effect will originate from the mouse down position.        
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RippleAssist.GetIsCentered(System.Windows.DependencyObject)">
+            <summary>
+            Set to <c>true</c> to cause the ripple to originate from the centre of the 
+            content.  Otherwise the effect will originate from the mouse down position.        
+            </summary>
+            <param name="element"></param>        
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.RippleAssist.IsDisabledProperty">
+            <summary>
+            Set to <c>True</c> to disable ripple effect
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RippleAssist.SetIsDisabled(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Set to <c>True</c> to disable ripple effect
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RippleAssist.GetIsDisabled(System.Windows.DependencyObject)">
+            <summary>
+            Set to <c>True</c> to disable ripple effect
+            </summary>
+            <param name="element"></param>        
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ScaleHost">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl">
+            <summary>
+            The platform does not currently support relative sized translation values. 
+            This primitive control walks through visual state animation storyboards
+            and looks for identifying values to use as percentages.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.SimpleDoubleComparisonEpsilon">
+            <summary>
+            A simple Epsilon-style value used for trying to determine if a double
+            has an identifying value. 
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl._knownWidth">
+            <summary>
+            The last known width of the control.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl._knownHeight">
+            <summary>
+            The last known height of the control.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl._specialAnimations">
+            <summary>
+            A set of custom animation adapters used to update the animation
+            storyboards when the size of the control changes.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.#ctor">
+            <summary>
+            Initializes a new instance of the RelativeAnimatingContentControl
+            type.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.OnSizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Handles the size changed event.
+            </summary>
+            <param name="sender">The source object.</param>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.UpdateAnyAnimationValues">
+            <summary>
+            Walks through the known storyboards in the control's template that
+            may contain identifying values, storing them for future
+            use and updates.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.UpdateKnownAnimations">
+            <summary>
+            Walks through all special animations, updating based on the current
+            size of the control.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.ProcessDoubleAnimationWithKeys(System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames)">
+            <summary>
+            Processes a double animation with keyframes, looking for known 
+            special values to store with an adapter.
+            </summary>
+            <param name="da">The double animation using key frames instance.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.ProcessDoubleAnimation(System.Windows.Media.Animation.DoubleAnimation)">
+            <summary>
+            Processes a double animation looking for special values.
+            </summary>
+            <param name="da">The double animation instance.</param>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationDimension">
+            <summary>
+            A selection of dimensions of interest for updating an animation.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationDimension.Width">
+            <summary>
+            The width (horizontal) dimension.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationDimension.Height">
+            <summary>
+            The height (vertical) dimension.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.AnimationValueAdapter">
+            <summary>
+            A simple class designed to store information about a specific 
+            animation instance and its properties. Able to update the values at
+            runtime.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.AnimationValueAdapter.OriginalValue">
+            <summary>
+            Gets or sets the original double value.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.AnimationValueAdapter.#ctor(HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationDimension)">
+            <summary>
+            Initializes a new instance of the AnimationValueAdapter type.
+            </summary>
+            <param name="dimension">The dimension of interest for updates.</param>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.AnimationValueAdapter.Dimension">
+            <summary>
+            Gets the dimension of interest for the control.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.AnimationValueAdapter.UpdateWithNewDimension(System.Double,System.Double)">
+            <summary>
+            Updates the original instance based on new dimension information
+            from the control. Takes both and allows the subclass to make the
+            decision on which ratio, values, and dimension to use.
+            </summary>
+            <param name="width">The width of the control.</param>
+            <param name="height">The height of the control.</param>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.GeneralAnimationValueAdapter`1.Instance">
+            <summary>
+            Stores the animation instance.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.GeneralAnimationValueAdapter`1.GetValue">
+            <summary>
+            Gets the value of the underlying property of interest.
+            </summary>
+            <returns>Returns the value of the property.</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.GeneralAnimationValueAdapter`1.SetValue(System.Double)">
+            <summary>
+            Sets the value for the underlying property of interest.
+            </summary>
+            <param name="newValue">The new value for the property.</param>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.GeneralAnimationValueAdapter`1.InitialValue">
+            <summary>
+            Gets the initial value (minus the identifying value portion) that the
+            designer stored within the visual state animation property.
+            </summary>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.GeneralAnimationValueAdapter`1._ratio">
+            <summary>
+            The ratio based on the original identifying value, used for computing
+            the updated animation property of interest when the size of the
+            control changes.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.GeneralAnimationValueAdapter`1.#ctor(HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationDimension,`0)">
+            <summary>
+            Initializes a new instance of the GeneralAnimationValueAdapter
+            type.
+            </summary>
+            <param name="d">The dimension of interest.</param>
+            <param name="instance">The animation type instance.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.GeneralAnimationValueAdapter`1.StripIdentifyingValueOff(System.Double)">
+            <summary>
+            Approximately removes the identifying value from a value.
+            </summary>
+            <param name="number">The initial number.</param>
+            <returns>Returns a double with an adjustment for the identifying
+            value portion of the number.</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.GeneralAnimationValueAdapter`1.GetDimensionFromIdentifyingValue(System.Double)">
+            <summary>
+            Retrieves the dimension, if any, from the number. If the number
+            does not have an identifying value, null is returned.
+            </summary>
+            <param name="number">The double value.</param>
+            <returns>Returns a double animation dimension if the number was
+            contained an identifying value; otherwise, returns null.</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.GeneralAnimationValueAdapter`1.UpdateWithNewDimension(System.Double,System.Double)">
+            <summary>
+            Updates the animation instance based on the dimensions of the
+            control.
+            </summary>
+            <param name="width">The width of the control.</param>
+            <param name="height">The height of the control.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.GeneralAnimationValueAdapter`1.UpdateValue(System.Double)">
+            <summary>
+            Updates the value of the property.
+            </summary>
+            <param name="sizeToUse">The size of interest to use with a ratio
+            computation.</param>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationToAdapter">
+            <summary>
+            Adapter for DoubleAnimation's To property.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationToAdapter.GetValue">
+            <summary>
+            Gets the value of the underlying property of interest.
+            </summary>
+            <returns>Returns the value of the property.</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationToAdapter.SetValue(System.Double)">
+            <summary>
+            Sets the value for the underlying property of interest.
+            </summary>
+            <param name="newValue">The new value for the property.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationToAdapter.#ctor(HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationDimension,System.Windows.Media.Animation.DoubleAnimation)">
+            <summary>
+            Initializes a new instance of the DoubleAnimationToAdapter type.
+            </summary>
+            <param name="dimension">The dimension of interest.</param>
+            <param name="instance">The instance of the animation type.</param>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationFromAdapter">
+            <summary>
+            Adapter for DoubleAnimation's From property.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationFromAdapter.GetValue">
+            <summary>
+            Gets the value of the underlying property of interest.
+            </summary>
+            <returns>Returns the value of the property.</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationFromAdapter.SetValue(System.Double)">
+            <summary>
+            Sets the value for the underlying property of interest.
+            </summary>
+            <param name="newValue">The new value for the property.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationFromAdapter.#ctor(HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationDimension,System.Windows.Media.Animation.DoubleAnimation)">
+            <summary>
+            Initializes a new instance of the DoubleAnimationFromAdapter 
+            type.
+            </summary>
+            <param name="dimension">The dimension of interest.</param>
+            <param name="instance">The instance of the animation type.</param>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationFrameAdapter">
+            <summary>
+            Adapter for double key frames.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationFrameAdapter.GetValue">
+            <summary>
+            Gets the value of the underlying property of interest.
+            </summary>
+            <returns>Returns the value of the property.</returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationFrameAdapter.SetValue(System.Double)">
+            <summary>
+            Sets the value for the underlying property of interest.
+            </summary>
+            <param name="newValue">The new value for the property.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationFrameAdapter.#ctor(HeBianGu.General.WpfControlLib.RelativeAnimatingContentControl.DoubleAnimationDimension,System.Windows.Media.Animation.DoubleKeyFrame)">
+            <summary>
+            Initializes a new instance of the DoubleAnimationFrameAdapter
+            type.
+            </summary>
+            <param name="dimension">The dimension of interest.</param>
+            <param name="frame">The instance of the animation type.</param>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.TreeViewAssist.AdditionalTemplateProperty">
+            <summary>
+            Allows additional rendering for each tree node, outside of the rippled part of the node which responsds to user selection.                        
+            </summary>
+            <remarks>
+            The content to be rendered is the same of the <see cref="T:System.Windows.Controls.TreeViewItem"/>; i.e the Header property, or
+            some other content such as a view model, typically when using a <see cref="T:System.Windows.HierarchicalDataTemplate"/>.
+            </remarks>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.TreeViewAssist.SetAdditionalTemplate(System.Windows.DependencyObject,System.Windows.DataTemplate)">
+            <summary>
+            Sets the additional template.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.TreeViewAssist.GetAdditionalTemplate(System.Windows.DependencyObject)">
+            <summary>
+            Gets the additional template.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>
+            The <see cref="T:System.Windows.DataTemplate" />.
+            </returns>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.TreeViewAssist.AdditionalTemplateSelectorProperty">
+            <summary>
+            Allows additional rendering for each tree node, outside of the rippled part of the node which responsds to user selection.                        
+            </summary>
+            <remarks>
+            The content to be rendered is the same of the <see cref="T:System.Windows.Controls.TreeViewItem"/>; i.e the Header property, or
+            some other content such as a view model, typically when using a <see cref="T:System.Windows.HierarchicalDataTemplate"/>.
+            </remarks>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.TreeViewAssist.SetAdditionalTemplateSelector(System.Windows.DependencyObject,System.Windows.Controls.DataTemplateSelector)">
+            <summary>
+            Sets the additional template selector.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.TreeViewAssist.GetAdditionalTemplateSelector(System.Windows.DependencyObject)">
+            <summary>
+            Gets the additional template selector.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>
+            The <see cref="T:System.Windows.Controls.DataTemplateSelector" />.
+            </returns>
+        </member>
+        <member name="F:HeBianGu.General.WpfControlLib.TreeViewAssist.SuppressAdditionalTemplate">
+            <summary>
+            To be used at <see cref="T:System.Windows.Controls.TreeViewItem"/> level, or to be returned by <see cref="!:AdditionalTemplateSelector"/>
+            implementors when the additional template associated with a tree should not be used.
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.UIHelpers">
+            <summary>
+                Encapsulates methods for manipulation of the visual tree.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.EnsureAccess(System.Reflection.MethodBase)">
+            <summary>
+                Ensures the calling thread is the thread associated with the <see cref="T:System.Windows.Threading.Dispatcher" />.
+            </summary>
+            <param name="method">The method.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.EnsureAccess(System.Reflection.MethodBase,System.Object[])">
+            <summary>
+                Ensures the calling thread is the thread associated with the <see cref="T:System.Windows.Threading.Dispatcher" />.
+            </summary>
+            <param name="method">The method.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.EnsureAccess(System.Reflection.MethodBase,System.Object)">
+            <summary>
+                Ensures the calling thread is the thread associated with the <see cref="T:System.Windows.Threading.Dispatcher" />.
+            </summary>
+            <param name="method">The method.</param>
+            <param name="o">The object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.EnsureAccess(System.Reflection.MethodBase,System.Object,System.Object[])">
+            <summary>
+                Ensures the calling thread is the thread associated with the <see cref="T:System.Windows.Threading.Dispatcher" />.
+            </summary>
+            <param name="method">The method.</param>
+            <param name="o">The object.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.EnsureAccess(System.Windows.Threading.Dispatcher,System.Reflection.MethodBase,System.Object,System.Object[])">
+            <summary>
+                Ensures the calling thread is the thread associated with the <see cref="T:System.Windows.Threading.Dispatcher" />.
+            </summary>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="method">The method.</param>
+            <param name="o">The object.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.EnsureAccess(System.Windows.Threading.DispatcherObject,System.Reflection.MethodBase,System.Object[])">
+            <summary>
+                Ensures the calling thread is the thread associated with the <see cref="T:System.Windows.Threading.Dispatcher" />.
+            </summary>
+            <param name="o">The object.</param>
+            <param name="method">The method.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.FindLogicalAncestor(System.Windows.DependencyObject,System.Predicate{System.Windows.DependencyObject})">
+            <summary>
+                Finds the logical ancestor according to the predicate.
+            </summary>
+            <param name="startElement">The start element.</param>
+            <param name="condition">The condition.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.FindLogicalAncestorByType``1(System.Windows.DependencyObject)">
+            <summary>
+                Finds the logical ancestor by type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="startElement">The start element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.FindLogicalRoot(System.Windows.DependencyObject)">
+            <summary>
+                Finds the logical root.
+            </summary>
+            <param name="startElement">The start element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.FindVisualAncestor(System.Windows.DependencyObject,System.Predicate{System.Windows.DependencyObject})">
+            <summary>
+                Finds the visual ancestor according to the predicate.
+            </summary>
+            <param name="startElement">The start element.</param>
+            <param name="condition">The condition.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.FindVisualAncestorByType``1(System.Windows.DependencyObject)">
+            <summary>
+                Finds the visual ancestor by type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="startElement">The start element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.FindVisualDescendant(System.Windows.DependencyObject,System.Predicate{System.Windows.DependencyObject})">
+            <summary>
+                Finds the visual descendant.
+            </summary>
+            <param name="startElement">The start element.</param>
+            <param name="condition">The condition.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.FindVisualDescendantByType``1(System.Windows.DependencyObject)">
+            <summary>
+                Finds the visual descendant by type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="startElement">The start element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.FindVisualRoot(System.Windows.DependencyObject)">
+            <summary>
+                Finds the visual root.
+            </summary>
+            <param name="startElement">The start element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.GetVisualChildren(System.Windows.Media.Visual)">
+            <summary>
+                Gets the visual children.
+            </summary>
+            <param name="parent">The parent.</param>
+            <returns></returns>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.UIHelpers.DpiTransformToDevice">
+            <summary>
+                Gets a matrix that transforms the coordinates of this target to the device that is associated with the rendering
+                destination.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.UIHelpers.DpiTransformFromDevice">
+            <summary>
+                Gets a matrix that transforms the coordinates of the device that is associated with the rendering destination of
+                this target.
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.UIHelpers.DpiX">
+            <summary>
+                Gets the system horizontal dots per inch (dpi).
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.UIHelpers.DpiY">
+            <summary>
+                Gets the system vertical dots per inch (dpi).
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.EnsureDpiData">
+            <summary>
+                Safely gets the system DPI. Using <see cref="T:System.Windows.PresentationSource" /> will not work in partial trust.
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.GetItemContainers(System.Windows.Controls.ItemsControl)">
+            <summary>
+                Gets the generated containers of all items in an <see cref="T:System.Windows.Controls.ItemsControl" />.
+            </summary>
+            <param name="itemsControl">The items control.</param>
+            <returns></returns>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.UIHelpers.IsAutomaticBrowserLaunchEnabled">
+            <summary>
+                Gets or sets a value indicating whether clicking a <see cref="T:System.Windows.Documents.Hyperlink" /> that has a URI
+                automatically launches the browser.
+            </summary>
+            <value>
+                <c>true</c> if the browser is launched automatically; otherwise, <c>false</c>. The default is <c>false</c>.
+            </value>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.UIHelpers.LaunchBrowser(System.Uri)">
+            <summary>
+                Launches the browser.
+                <remarks>Provides accidental click flood protection.</remarks>
+            </summary>
+            <param name="uri">The URI.</param>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ToolBarControl">
+            <summary>
+            ToolBarControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ToolBarControl
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ToolBarControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.MessageWindow">
+            <summary>
+            MessageWindow.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MessageWindow
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.MessageWindow.Result">
+            <summary> 说明 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.MessageWindow.ShowDialog(System.String,System.String,System.Int32,System.Tuple{System.String,System.Action}[])">
+            <summary> 显示窗口 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.MessageWindow.ShowDialogWith(System.String,System.String,System.Tuple{System.String,System.Action{HeBianGu.General.WpfControlLib.MessageWindow}}[])">
+            <summary> 显示窗口 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.MessageWindow.ShowSumit(System.String,System.String,System.Int32)">
+            <summary> 只有确定的按钮 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.MessageWindow.ShowDialog(System.String,System.Windows.Controls.Grid)">
+            <summary>
+            弹出消息框
+            </summary>
+            <param name="message">消息</param>
+            <param name="owner">父级窗体</param>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.MessageWindow.Window_Closed(System.Object,System.EventArgs)">
+            <summary>  窗体关闭事件  </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.MessageWindow.sumitBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary> 确定 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.MessageWindow.cancelBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary> 取消 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.MessageWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.ProgressWindow">
+            <summary>
+            ProgressWindow.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ProgressWindow
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ProgressWindow.ShowDialogWith(System.Action{HeBianGu.General.WpfControlLib.ProgressWindow},System.String,System.Tuple{System.String,System.Action}[])">
+            <summary> 显示窗口 </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.ProgressWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HeBianGu.General.WpfControlLib.WindowBase">
+            <summary>
+            WindowBase.xaml 的交互逻辑
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.WindowBase.FIcon">
+            <summary>
+            按钮字体图标编码
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.WindowBase.FIconSize">
+            <summary>
+            按钮字体图标大小
+            </summary>
+        </member>
+        <member name="P:HeBianGu.General.WpfControlLib.WindowBase.CaptionHeight">
+            <summary>
+            标题高度
+            </summary>
+        </member>
+        <member name="M:HeBianGu.General.WpfControlLib.WindowBase.BegionStoryClose">
+            <summary> 用于重写关闭到那个花 </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
